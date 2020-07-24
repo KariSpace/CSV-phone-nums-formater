@@ -4,6 +4,6 @@ id,phone,status
 3,0572662723,ok if 38 addeed
 4,380572662723666,ok if 666 from end deleted
 5,3805(726)6272-36+6=6,not ok
-6,0(6r725wr6)27-23,ok if non-didgits deleted and 38 addeed
-7,0(6r725wr6)27-2332,not ok
+6,0(5r726wr6)27-23,ok if non-didgits deleted and 38 addeed
+7,0(5r726wr6)27-2332,not ok
 8,hui,not ok
