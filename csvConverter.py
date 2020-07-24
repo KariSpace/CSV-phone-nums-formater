@@ -39,7 +39,14 @@ def dell_duplicates(before_file, after_file, field_names_list):
                 if key not in keysread:
                         keysread.append(key)
                         uniquewrite.writerow(row)
-
+def phoneTransformer(phone):
+    phone = re.sub(r'\D', "", phone)
+    if len(phone) >= 9 and phone.isdigit():
+        ok_phone = '380' + phone[-9:]  #adding country code
+        return ok_phone
+    else :
+        problem_num = phone
+        raise ValueError('Can\'t format phone')  
 
 def main():
     with open(csv_file, 'r') as csv_f:  
@@ -55,8 +62,8 @@ def main():
 
         for row in reader:
             i+=1
-            phone_num = re.sub(r'\D', "",  row[1])
             id_num = row[0]
+            phone_num = re.sub(r'\D', "",  row[1])
             if len(phone_num) >= 9 and phone_num.isdigit():
                     a+=1
                     ok_num = '380' + phone_num[-9:]  #adding country code
