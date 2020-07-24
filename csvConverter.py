@@ -2,7 +2,6 @@ import csv
 import re
 from logging import log
 
-csv_file = 'YOUR_FILE.csv'  # your file
 problem_file = 'problem_file.csv'
 ok_file = "ok_file.csv"
 no_copy_problem_file = 'no-copy-problem_file.csv'
@@ -49,7 +48,7 @@ def phoneTransformer(phone):
         raise ValueError('Can\'t format phone')
 
 
-def main():
+def main(csv_file):
     with open(csv_file, 'r') as csv_f:
         reader = csv.reader(csv_f)
 
