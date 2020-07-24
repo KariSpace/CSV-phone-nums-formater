@@ -1,4 +1,4 @@
-# CSV-phone-nums-formater
+# CSV Phone Number Formater
 Python code to format phone numbers form random phones in all posible formats to normal Ukrainian numbers. 
 
 ## How to Use? 
