@@ -24,7 +24,8 @@ def dell_duplicates(before_file, after_file, field_names_list):
         with open(after_file, 'w', newline='') as outputfile:
 
             duplicatereader = csv.DictReader(inputfile, delimiter=';')
-            uniquewrite = csv.DictWriter(outputfile,
+            uniquewrite = csv.DictWriter(
+                                        outputfile,
                                         fieldnames=field_names_list,
                                         delimiter=';')
 
