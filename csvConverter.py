@@ -39,6 +39,8 @@ def dell_duplicates(before_file, after_file, field_names_list):
                 if key not in keysread:
                         keysread.append(key)
                         uniquewrite.writerow(row)
+
+
 def phoneTransformer(phone):
     phone = re.sub(r'\D', "", phone)
     if len(phone) >= 9 and phone.isdigit():
