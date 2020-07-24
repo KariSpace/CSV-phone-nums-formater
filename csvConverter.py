@@ -65,18 +65,16 @@ def main():
         for row in reader:
             i+=1
             id_num = row[0]
-            phone_num = re.sub(r'\D', "",  row[1])
-            if len(phone_num) >= 9 and phone_num.isdigit():
-                    a+=1
-                    ok_num = '380' + phone_num[-9:]  #adding country code
-                    ok_line = [id_num, ok_num]
-                    csv_writer(ok_line, ok_file)
-  
-            else :
-                 c+=1
-                 problem_num = row[1]
-                 problem_line = [id_num, problem_num]
-                 csv_writer(problem_line, problem_file)
+            try: 
+                ok_num = phoneTransformer(row[1])
+                a+=1
+                ok_line = [id_num, ok_num]
+                csv_writer(ok_line, ok_file)
+            except: 
+                problem_num = row[1]
+                c+=1
+                problem_line = [id_num, problem_num]
+                csv_writer(problem_line, problem_file)
 
         print("\nall : " + str(i))
         print("ok phone num : " + str(a))
